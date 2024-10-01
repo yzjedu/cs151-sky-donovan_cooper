@@ -21,24 +21,28 @@ par = 0
 
 # Data In:
 # Prompt the user to give the hill type
-# Prompt the user to give the type of hill and the jumper’s speed at the end of the ramp
 hill_type = input('What is the hill type? (normal or large) ')
-speed = input('What is the speed of the jumper at the end of the ramp? ')
+hill_type = hill_type.lower().strip()
 
 # Decisions:
-# create boolean for if ramp is normal, large, or otherwise
+# create a while statement to loop if the hill type is not normal or large
+# create boolean for if ramp is normal or large
 # set the variables for the constants for height, points_per_meter, par for the respective ramp types
-# If ramp is not large or normal print error and use last else function or exit function
+while hill_type != 'normal' and hill_type != 'large':
+    print('Sorry, that hill type will not work!')
+    hill_type = input('What is the hill type? (normal or large) ')
+    hill_type = hill_type.lower().strip()
 if hill_type == 'normal':
-    height = 46
-    points_per_meter = 2
-    par = 90
-elif hill_type == 'large':
-    height = 70
-    points_per_meter = 1.8
-    par = 120
+        height = 46
+        points_per_meter = 2
+        par = 90
 else:
-    print('That hill type will not work!')
+        height = 70
+        points_per_meter = 1.8
+        par = 120
+
+# Prompt the user to input the jumper's speed at the end of the ramp
+speed = int(input('What is the speed of the jumper at the end of the ramp? '))
 
 # Processing:
 # do calculations to find the jumpers time_in_air (sqrt((2*height)/9.8))
@@ -50,7 +54,7 @@ else:
 # otherwise print Sorry you didn't go that far
 
 air_time = int(math.sqrt((2*height)/9.8))
-distance = int(speed * air_time)
+distance = (speed * air_time)
 points = 60 + (distance - par) * points_per_meter
 
 print('Distance: ', distance)
