@@ -13,6 +13,10 @@ import math
 # purpose : Given the type of ski jump and the jumper’s speed at the end of the ramp, predict how far they will jump \n
 # and calculate the number of points they will earn
 
+# Describe the purpose of the program
+print('This program uses the hill type and ski jumper speed to predict the distance of their jump and the points they'
+      ' would earn for it.')
+
 # Constants
 # set all constant variables to 0
 height = 0
@@ -25,7 +29,7 @@ hill_type = input('What is the hill type? (normal or large) ')
 hill_type = hill_type.lower().strip()
 
 # Decisions:
-# create a while statement to loop if the hill type is not normal or large
+# create a while loop to prompt the user to change the hill type if it is not normal or large
 # create boolean for if ramp is normal or large
 # set the variables for the constants for height, points_per_meter, par for the respective ramp types
 while hill_type != 'normal' and hill_type != 'large':
