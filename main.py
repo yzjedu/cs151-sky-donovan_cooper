@@ -1,5 +1,4 @@
 # Programmers:Donovan Raymond & Cooper Nazar
-import math
 
 # Course:  Computer Sci through Programming (CS_151_05_06)
 # Due Date: Oct 2,2024
@@ -12,6 +11,8 @@ import math
 # receive if they went that distance.
 # purpose : Given the type of ski jump and the jumper’s speed at the end of the ramp, predict how far they will jump \n
 # and calculate the number of points they will earn
+
+import math
 
 # Describe the purpose of the program
 print('This program uses the hill type and ski jumper speed to predict the distance of their jump and the points they'
@@ -50,20 +51,21 @@ speed = int(input('What is the speed of the jumper at the end of the ramp? '))
 
 # Processing:
 # do calculations to find the jumpers time_in_air (sqrt((2*height)/9.8))
-# calculate the distance (speed * time in the air)
-# calculate the amount of points gained (60 + (distance – par)*points_per_meter)
-# Data Out:
-# if distance is above 60 the print Great job for doing better than par!
-# if distance is below 10 the print What happened?
-# otherwise print Sorry you didn't go that far
-
 air_time = int(math.sqrt((2*height)/9.8))
+
+# calculate the distance (speed * time in the air)
 distance = (speed * air_time)
+
+# calculate the amount of points gained (60 + (distance – par)*points_per_meter)
 points = 60 + (distance - par) * points_per_meter
 
+# Data Out:
 print('Distance: ', distance)
 print('Points: ', points)
 
+# if distance is above 60 the print Great job for doing better than par!
+# if distance is below 10 the print What happened?
+# otherwise print Sorry you didn't go that far
 if points > 60:
     print('Great job for doing better than par!')
 elif points < 10:
