@@ -38,27 +38,33 @@ while hill_type != 'normal' and hill_type != 'large':
     hill_type = input('What is the hill type? (normal or large) ')
     hill_type = hill_type.lower().strip()
 if hill_type == 'normal':
-        height = 46
-        points_per_meter = 2
-        par = 90
+        height = float(46)
+        points_per_meter = float(2)
+        par = float(90)
 else:
-        height = 70
-        points_per_meter = 1.8
-        par = 120
+        height = float(70)
+        points_per_meter = float(1.8)
+        par = float(120)
 
 
 # Prompt the user to input the jumper's speed at the end of the ramp
-speed = int(input('What is the speed of the jumper at the end of the ramp? '))
+speed = float(input('What is the speed of the jumper at the end of the ramp? '))
 
 # Processing:
 # do calculations to find the jumpers time_in_air (sqrt((2*height)/9.8))
-air_time = int(math.sqrt((2*height)/9.8))
+air_time = float(math.sqrt((2*height)/9.8))
 
 # calculate the distance (speed * time in the air)
-distance = (speed * air_time)
+distance = float((speed * air_time))
 
 # calculate the amount of points gained (60 + (distance – par)*points_per_meter)
-points = 60 + (distance - par) * points_per_meter
+points = float(60 + (distance - par) * points_per_meter)
+
+# round distance to the second decimal point
+distance = f'{distance:.2f}'
+
+# round points to a whole number
+points = round(points)
 
 # Data Out:
 print('Distance: ', distance)
