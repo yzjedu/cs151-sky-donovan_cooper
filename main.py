@@ -46,6 +46,7 @@ else:
         points_per_meter = float(1.8)
         par = float(120)
 
+
 # Prompt the user to input the jumper's speed at the end of the ramp
 speed = float(input('What is the speed of the jumper at the end of the ramp? '))
 
@@ -68,6 +69,8 @@ points = round(points)
 # Data Out:
 print('Distance: ', distance)
 print('Points: ', points)
+
+
 
 # if distance is above 60 the print Great job for doing better than par!
 # if distance is below 10 the print What happened?
