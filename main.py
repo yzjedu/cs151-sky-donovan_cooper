@@ -60,9 +60,10 @@ distance = float((speed * air_time))
 points = float(60 + (distance - par) * points_per_meter)
 
 # round distance to the second decimal point
-distance =
+distance = f'{distance:.2f}'
 
 # make points an integer
+points = int(points)
 
 # Data Out:
 print('Distance: ', distance)
