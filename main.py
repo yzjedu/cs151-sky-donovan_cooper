@@ -62,8 +62,8 @@ points = float(60 + (distance - par) * points_per_meter)
 # round distance to the second decimal point
 distance = f'{distance:.2f}'
 
-# make points an integer
-points = int(points)
+# round points to a whole number
+points = round(points)
 
 # Data Out:
 print('Distance: ', distance)
